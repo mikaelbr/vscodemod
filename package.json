@@ -2,7 +2,7 @@
   "name": "vscodemod",
   "displayName": "vscodemod",
   "description": "Run code modifications on selected code",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "mikaelbr",
   "engines": {
     "vscode": "^1.15.0"
