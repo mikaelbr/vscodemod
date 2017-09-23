@@ -11,9 +11,7 @@ module.exports = function codemod(source, transform) {
         jscodeshift: jscodeshift,
         stats: empty
       },
-      {
-        'inline-single-expressions': true
-      }
+      {}
     );
     return out == null ? source : out;
   } catch (err) {
