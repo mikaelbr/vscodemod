@@ -3,7 +3,6 @@
 module.exports = transform;
 module.exports.title = 'Transform to normal functions';
 module.exports.description = 'Changes from (a, b) => a + b to function (a, b) { return a + b; }';
-module.exports = transform;
 
 function transform(file, api, options) {
   const j = api.jscodeshift;

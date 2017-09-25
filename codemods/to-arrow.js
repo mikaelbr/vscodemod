@@ -1,3 +1,10 @@
+// @ts-check
+/*
+ * Originally taken from:
+ * https://github.com/cpojer/js-codemod/blob/master/transforms/arrow-function.js
+ */
+
+// @ts-ignore
 module.exports = transform;
 module.exports.title = 'Transform to arrow functions';
 module.exports.description = 'Changes from function (a, b) { return a + b; } to (a, b) => a + b';
