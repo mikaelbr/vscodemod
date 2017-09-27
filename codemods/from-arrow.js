@@ -9,7 +9,8 @@ function transform(file, api, options) {
 
   const printOptions = options.printOptions || { quote: 'single' };
   const root = j(file.source);
-  const getBodyStatement = fn => {
+
+  function getBodyStatement(fn) {
     const inner = fn.body;
     const comments = (fn.body.comments || []).concat(inner.comments || []);
 
@@ -18,13 +19,13 @@ function transform(file, api, options) {
       return j.blockStatement([j.returnStatement(inner)]);
     }
     return fn.body;
-  };
+  }
 
-  const createFunctionExpression = (fn, id) => {
+  function createFunctionExpression(fn, id) {
     const func = j.functionExpression(id, fn.params, getBodyStatement(fn));
     func.comments = fn.comments;
     return func;
-  };
+  }
 
   const replacedCallbacks =
     root
@@ -37,7 +38,9 @@ function transform(file, api, options) {
         return noThis;
       })
       .forEach(path => {
-        const id = path.parentPath.type === 'VariableDeclaration' ? path.parentPath.value.id : null;
+        const id = j.VariableDeclarator.check(path.parentPath.value)
+          ? path.parentPath.value.id
+          : null;
         j(path).replaceWith(createFunctionExpression(path.value, id));
       })
       .size() > 0;
