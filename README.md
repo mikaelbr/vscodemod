@@ -8,3 +8,12 @@ This was originally started as a way to toggle between the two (arrow functions 
 ## Usage
 
 ![vscodemod](./assets/vscodemod.gif)
+
+
+## Roadmap
+
+- Support for custom codemods (reading from dir)
+- More codemods.
+- Dry-run preview?
+- Integration with prettier if format on save?
+- Smarter meny selection based on AST of selected code?
