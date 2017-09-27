@@ -15,7 +15,7 @@ function transform(file, api, options) {
   const printOptions = options.printOptions || { quote: 'single' };
   const root = j(file.source);
 
-  const getBodyStatement = fn => {
+  function getBodyStatement(fn) {
     // 79 characters fit on a line of length 80
     const maxWidth = options['max-width'] ? options['max-width'] - 1 : undefined;
 
@@ -42,13 +42,13 @@ function transform(file, api, options) {
       }
     }
     return fn.body;
-  };
+  }
 
-  const createArrowFunctionExpression = fn => {
+  function createArrowFunctionExpression(fn) {
     const arrowFunction = j.arrowFunctionExpression(fn.params, getBodyStatement(fn), false);
     arrowFunction.comments = fn.comments;
     return arrowFunction;
-  };
+  }
 
   const replacedBoundFunctions =
     root
