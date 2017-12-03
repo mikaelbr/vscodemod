@@ -1,8 +1,8 @@
-# vscodemod – Run codemod on selected code
+# [WIP] vscodemod – Run codemod on selected code
 
 VSCode Extension for doing JavaScript code modifications (AST to AST transformations) in VSCode using [jscodeshift](https://github.com/facebook/jscodeshift).
 
-Disclaimer: Currently work in progress. Not all codemods are complete or take into account all cases, and they aren't tested. Any feedback, pull requests or issues are highly appriciated. Feel free to join in on the project by creating codemods and/or tests.
+**Disclaimer**: Currently work in progress. Not all codemods are complete or take into account all cases, and they aren't tested. Any feedback, pull requests or issues are highly appriciated. Feel free to join in on the project by creating codemods and/or tests.
 
 ## Why?
 
